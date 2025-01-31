@@ -1,0 +1,29 @@
+{
+  "name": "reevo-server-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.738.0",
+    "@aws-sdk/lib-storage": "^3.738.0",
+    "aws-sdk": "^2.1692.0",
+    "axios": "^1.7.9",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "fix-webm-duration": "^1.0.6",
+    "hound": "^1.0.5",
+    "nodemon": "^3.1.9",
+    "openai": "^4.81.0",
+    "socket.io": "^4.8.1",
+    "zod": "^3.24.1"
+  }
+}
