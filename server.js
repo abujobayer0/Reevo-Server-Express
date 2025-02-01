@@ -34,9 +34,10 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_SECRET_KEY,
 });
 
+const allowedOrigins = process.env.ELECTRON_HOST?.split(",") || [];
 const io = new Server(server, {
   cors: {
-    origin: process.env.ELECTRON_HOST,
+    origin: allowedOrigins.length > 0 ? allowedOrigins : "*",
     methods: ["GET", "POST"],
   },
 });
