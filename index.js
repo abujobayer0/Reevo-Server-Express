@@ -42,6 +42,10 @@ const io = new Server(server, {
   },
 });
 
+app.get("/health-check", (req, res) => {
+  res.send("🟢 Server is running");
+});
+
 const recordedChunks = {};
 
 io.on("connection", (socket) => {
