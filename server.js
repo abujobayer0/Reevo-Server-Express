@@ -107,9 +107,8 @@ io.on("connection", (socket) => {
 
               const transcription = await openai.audio.transcriptions.create({
                 file: fs.createReadStream(filePath),
-                //models
-                model: "whisper-1 ",
-                // response_format: "text",
+                model: "whisper-1",
+                response_format: "text",
               });
 
               if (transcription) {
