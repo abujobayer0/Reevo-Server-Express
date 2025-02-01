@@ -47,8 +47,7 @@ io.on("connection", (socket) => {
   console.log("🟢 Socket is connected");
 
   socket.on("video-chunks", async (data) => {
-    console.log("🟢 Video chunks received", data);
-
+    console.log("🟢 Video chunks received");
     const filePath = `temp_upload/${data.filename}`;
 
     if (!recordedChunks[data.filename]) {
@@ -107,8 +106,9 @@ io.on("connection", (socket) => {
 
               const transcription = await openai.audio.transcriptions.create({
                 file: fs.createReadStream(filePath),
-                model: "whisper-1",
-                response_format: "text",
+                //models
+                model: "whisper-1 ",
+                // response_format: "text",
               });
 
               if (transcription) {
