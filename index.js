@@ -40,6 +40,12 @@ const io = new Server(server, {
     origin: allowedOrigins.length > 0 ? allowedOrigins : "*",
     methods: ["GET", "POST"],
   },
+  pingTimeout: 60000,
+  pingInterval: 25000,
+  reconnection: true,
+  connectTimeout: 20000,
+  maxHttpBufferSize: 1e8,
+  transports: ["websocket", "polling"],
 });
 
 app.get("/health-check", (req, res) => {
